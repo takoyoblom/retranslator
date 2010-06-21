@@ -16,7 +16,7 @@
 start(Options) ->
     inets:start(),
     register(processor, spawn(?MODULE, http_loop,[])),
-    Urls = utils:get_conf("destinations",[]),
+    Urls = common:get_conf("destinations",[]),
     Loop = fun (Req) ->
                    ?MODULE:loop(Req,Urls)
            end,
