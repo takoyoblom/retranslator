@@ -1,4 +1,5 @@
 -module(utils).
+-author('author <takoy@oblom.com>').
 
 -export([get_conf/2]).
 
