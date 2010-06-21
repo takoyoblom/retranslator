@@ -41,10 +41,11 @@ upgrade() ->
 %% @spec init([]) -> SupervisorTree
 %% @doc supervisor callback.
 init([]) ->
-    Ip = utils:get_conf("MOCHIWEB_IP", "0.0.0.0"),
+    Ip = common:get_conf("MOCHIWEB_IP", "0.0.0.0"),
+    Port = common:get_conf("MOCHIWEB_PORT", 8000),
     WebConfig = [
          {ip, Ip},
-                 {port, 8000}],
+         {port, Port}],
     Web = {retr_web,
            {retr_web, start, [WebConfig]},
            permanent, 5000, worker, dynamic},
