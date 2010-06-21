@@ -1,0 +1,2 @@
+Edit config.config, put "destinations" list to be your target servers
+Put "MOCHIWEB_IP" to be Your public IP to listen on ( "0.0.0.0" means listen on all interfaces) 
